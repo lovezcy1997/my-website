@@ -33,12 +33,25 @@
 
 <script setup>
 const items = [
-  { id: 1, title: '卡片 1', desc: '第一个卡片' },
-  { id: 2, title: '卡片 2', desc: '第二个卡片' },
-  { id: 3, title: '卡片 3', desc: '第三个卡片' },
-  { id: 4, title: '卡片 4', desc: '第四个卡片' },
-  { id: 5, title: '卡片 5', desc: '第五个卡片' }
+  {id: 1, title: '卡片 1', desc: '第一个卡片'},
+  {id: 2, title: '卡片 2', desc: '第二个卡片'},
+  {id: 3, title: '卡片 3', desc: '第三个卡片'},
+  {id: 4, title: '卡片 4', desc: '第四个卡片'},
+  {id: 5, title: '卡片 5', desc: '第五个卡片'}
 ]
+// const {data} = await useFetch('/api/cards/card', {
+//   method: 'POST',
+//   body: {title: '新卡片', content: '描述'}
+// })
+// console.log('1', data.value)
+  const getCards = async () => {
+    const {data} = await $fetch('/api/cards/card', {
+      method: 'GET'
+    })
+    console.log('2', data.value)
+  }
+
+  onMounted(getCards)
 </script>
 
 <style scoped>
@@ -65,7 +78,7 @@ h1 {
   margin-bottom: 20px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #eee;
 
   /* 默认：可见 */
@@ -92,7 +105,7 @@ h1 {
 }
 
 .card.special p {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .card.special.hidden {
