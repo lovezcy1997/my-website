@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     },
 
     // ===== SSR =====
-    ssr: true,
+    ssr: false,
 
     // ===== 渲染模式控制 =====
     nitro: {
