@@ -2,7 +2,7 @@
 <template>
   <div class="container">
     <h1>滚动动画测试</h1>
-    <p>滚动页面观察效果</p>
+    <p>滚动页面观察效果1</p>
     <div
         v-for="(item, index) in items"
         :key="item.id"
