@@ -16,7 +16,10 @@ export default defineNuxtConfig({
 
     // ===== 渲染模式控制 =====
     nitro: {
-        preset: 'node-server'  // 默认，也可以改成 'static'
+        preset: 'node-server',
+        externals: {
+            inline: ['@prisma/client']
+        }
     },
 
     // ===== 路由规则 =====
