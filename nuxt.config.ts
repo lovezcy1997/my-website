@@ -49,6 +49,6 @@ export default defineNuxtConfig({
                 {name: 'keywords', content: '蔚来,电动汽车,智能汽车'}
             ]
         },
-        baseURL: '/'
+
     },
 } as any)
